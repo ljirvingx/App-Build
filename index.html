@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New Patient Examination Notes</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <svg class="svg-defs" aria-hidden="true" focusable="false">
+    <filter id="logo-primary-filter" color-interpolation-filters="sRGB">
+      <feColorMatrix
+        type="matrix"
+        values="0 0 0 0 0.2
+                0 0 0 0 0.341
+                0 0 0 0 0.396
+                0 0 0 1 0"
+      />
+    </filter>
+  </svg>
+  <section class="cover-page">
+    <div class="cover-content">
+      <div class="cover-brand">
+        <h1>DentDraft</h1>
+      </div>
+      <p class="cover-summary">
+        A calm clinical note workspace for busy dental professionals. Thoughtfully designed for modern dentistry.
+      </p>
+      <img class="cover-divider-logo" src="assets/dentdraft-logo-2-transparent.png" alt="DentDraft logo" />
+      <a class="cover-button" href="#notes-app">Start notes</a>
+    </div>
+  </section>
+
+  <header class="app-header">
+    <div class="brand-lockup">
+      <div class="logo-stack">
+        <img class="logo-mark" src="assets/dentdraft-logo-2-transparent.png" alt="DentDraft logo" />
+        <p class="eyebrow logo-subtitle">Clinical note generator</p>
+      </div>
+      <div>
+        <h1>New Patient Examination</h1>
+      </div>
+    </div>
+    <p>Made by Laura</p>
+  </header>
+
+  <main id="notes-app">
+    <div class="app-layout">
+      <aside class="sidebar">
+        <h3>Templates</h3>
+        <ul id="template-list"></ul>
+      </aside>
+
+      <section class="panel" id="note-panel">
+        <div class="form-column">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Current template</p>
+              <h2>Build note</h2>
+            </div>
+            <div class="actions">
+              <button id="save-note">Save Note</button>
+              <button id="clear-notes" class="secondary-button">Clear Saved Notes</button>
+            </div>
+          </div>
+
+          <div id="form-area"></div>
+        </div>
+
+        <aside class="output-column">
+          <div class="note-output">
+            <div class="section-header">
+              <h3>Generated Note</h3>
+              <div class="output-actions">
+                <button id="copy-note">Copy</button>
+              </div>
+            </div>
+            <textarea id="note-text" rows="12" readonly placeholder="Your generated note will appear here..."></textarea>
+          </div>
+
+          <div class="saved-notes">
+            <h3>Saved Notes</h3>
+            <ul id="saved-list"></ul>
+          </div>
+        </aside>
+      </section>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
