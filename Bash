@@ -1,0 +1,16 @@
+[main (root-commit) 5c60225] Initial commit
+ 14 files changed, 2899 insertions(+)
+ create mode 100644 .DS_Store
+ create mode 100644 Bash
+ create mode 160000 DentDraft
+ create mode 100644 DentDraft logo 2.png
+ create mode 100644 README.md
+ create mode 100644 app.js
+ create mode 100644 assets/dentdraft-logo-2-transparent.png
+ create mode 100644 assets/dentdraft-logo-2.png
+ create mode 100644 assets/dentdraft-logo-cropped.png
+ create mode 100644 assets/dentdraft-logo-transparent.png
+ create mode 100644 assets/dentdraft-logo.png
+ create mode 100644 assets/homepage-background.jpg
+ create mode 100644 index.html
+ create mode 100644 styles.css
