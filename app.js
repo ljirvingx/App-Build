@@ -10,6 +10,10 @@ const headerTitle = document.querySelector('header h1');
 const STORAGE_KEY = 'dental-notes-state';
 let savedNotes = [];
 
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
 const templates = {
   'new-assessment': [
     {
@@ -2099,3 +2103,9 @@ renderSidebar();
 renderTemplate();
 buildNote();
 renderSavedNotes();
+
+window.addEventListener('load', () => {
+  if (!window.location.hash) {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }
+});
