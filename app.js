@@ -1328,6 +1328,12 @@ function createBwReportSection(label, keyPrefix) {
         options: ['A', 'N']
       },
       {
+        label: 'Reason for N grade',
+        key: `${keyPrefix}GradeReason`,
+        type: 'text',
+        dependsOn: { key: `${keyPrefix}Grade`, value: 'N' }
+      },
+      {
         label: 'Caries',
         key: `${keyPrefix}Caries`,
         type: 'text'
@@ -1363,6 +1369,12 @@ function createPaReportSection(label, keyPrefix) {
         key: `${keyPrefix}Grade`,
         type: 'radios',
         options: ['A', 'N']
+      },
+      {
+        label: 'Reason for N grade',
+        key: `${keyPrefix}GradeReason`,
+        type: 'text',
+        dependsOn: { key: `${keyPrefix}Grade`, value: 'N' }
       },
       {
         label: 'Caries',
