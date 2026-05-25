@@ -108,7 +108,7 @@ button {
   margin: 0;
   color: var(--text);
   font-family: Cambria, Georgia, "Times New Roman", serif;
-  font-size: clamp(0.95rem, 1.35vw, 1.15rem);
+  font-size: clamp(0.86rem, 1.12vw, 1rem);
   line-height: 1.32;
   white-space: nowrap;
 }

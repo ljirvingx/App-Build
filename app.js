@@ -1435,7 +1435,10 @@ function createNurseSection() {
   };
 }
 
-Object.values(templates).forEach((template) => {
+const templatesWithoutNurse = new Set(['bw-pa-radiographs', 'opg-radiograph']);
+
+Object.entries(templates).forEach(([key, template]) => {
+  if (templatesWithoutNurse.has(key)) return;
   if (!template.some((section) => section.key === 'nurse')) {
     template.unshift(createNurseSection());
   }
