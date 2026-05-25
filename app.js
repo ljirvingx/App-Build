@@ -1680,21 +1680,6 @@ function renderTemplate(templateKey = currentTemplate) {
 
         conditionalBlock.appendChild(sfWrapper);
 
-        // If this subfield depends on another field, wire up toggling
-        if (sf.dependsOn) {
-          const depName = sf.dependsOn.key;
-          const depValue = sf.dependsOn.value;
-          const toggle = () => {
-            const depChecked = Array.from(document.querySelectorAll(`input[name="${depName}"]:checked`)).some((i) => i.value === depValue);
-            sfWrapper.style.display = depChecked ? 'block' : 'none';
-          };
-          // Attach listeners to dependency inputs (checkbox/radio/select)
-          document.querySelectorAll(`input[name="${sf.dependsOn.key}"]`).forEach((el) => el.addEventListener('change', toggle));
-          const sel = document.querySelector(`select[name="${sf.dependsOn.key}"]`);
-          if (sel) sel.addEventListener('change', toggle);
-          // initial state
-          toggle();
-        }
       });
 
       field.appendChild(conditionalBlock);
@@ -1791,8 +1776,8 @@ function renderTemplate(templateKey = currentTemplate) {
       }
     });
     toggleConditionalBlocks();
-    // Attach a global change listener to update conditional blocks if any checkbox changes
-    document.querySelectorAll('input[type=checkbox]').forEach((i) => i.addEventListener('change', () => {
+    // Update conditional blocks when any checkbox/radio choice changes.
+    document.querySelectorAll('input[type=checkbox], input[type=radio], select').forEach((i) => i.addEventListener('change', () => {
       toggleConditionalBlocks();
     }));
   })();
